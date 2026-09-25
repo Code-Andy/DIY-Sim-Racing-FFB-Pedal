@@ -12,7 +12,8 @@ def update_version(*args, **kwargs):
         print(f"Version_Board.h not found at {header_path}")
         return
 
-    override = os.environ.get("PEDAL_FIRMWARE_VERSION_OVERRIDE")
+    override = (os.environ.get("PEDAL_FIRMWARE_VERSION_OVERRIDE")
+                or env.GetProjectOption("custom_firmware_version", ""))
     if override:
         if not re.fullmatch(r"\d{2}\.\d{2}\.\d{2}", override):
             raise ValueError("PEDAL_FIRMWARE_VERSION_OVERRIDE must be YY.WW.DD")
