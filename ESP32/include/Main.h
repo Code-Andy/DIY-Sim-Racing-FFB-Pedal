@@ -52,7 +52,9 @@
 // #define PUT_TARGET_CYCLE_TIME_IN_US DAP_MICROSECONDS_PER_SECOND / 1000
 
 #define SERVO_MAX_VOLTAGE_IN_V_36V 38.0f
-#define SERVO_MAX_VOLTAGE_IN_V_48V 50.0f
+// Set the servo bleeder threshold to 51 V (setServoVoltage adds 2 V),
+// preserving the 48 V tuning from Code-Andy v88 on current upstream.
+#define SERVO_MAX_VOLTAGE_IN_V_48V 49.0f
 
 /********************************************************************/
 /*                      Loadcell defines                            */

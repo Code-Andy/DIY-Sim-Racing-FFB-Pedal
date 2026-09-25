@@ -12,10 +12,16 @@ def update_version(*args, **kwargs):
         print(f"Version_Board.h not found at {header_path}")
         return
 
-    now = datetime.datetime.now()
-    year, week, weekday = now.isocalendar()
-    year_str = str(year)[-2:]
-    version_str = f'"{year_str}.{week:02d}.{weekday:02d}"'
+    override = os.environ.get("PEDAL_FIRMWARE_VERSION_OVERRIDE")
+    if override:
+        if not re.fullmatch(r"\d{2}\.\d{2}\.\d{2}", override):
+            raise ValueError("PEDAL_FIRMWARE_VERSION_OVERRIDE must be YY.WW.DD")
+        version_str = f'"{override}"'
+    else:
+        now = datetime.datetime.now()
+        year, week, weekday = now.isocalendar()
+        year_str = str(year)[-2:]
+        version_str = f'"{year_str}.{week:02d}.{weekday:02d}"'
     
     with open(header_path, "r", encoding="utf-8") as f:
         content = f.read()
