@@ -4,6 +4,8 @@
 
 # DIY Sim Racing Force Feedback (FFB) Pedal
 
+**Code-Andy fork:** `main` follows upstream release **26.40.01** with local Gilphilbert v1.2 / 48 V and USB-upload configuration. See [fork notes](FORK.md) for the exact upstream base, local changes and retained v88 recovery branch.
+
 <p align="center">
   <a href="https://github.com/ChrGri/DIY-Sim-Racing-FFB-Pedal/actions/workflows/arduino.yml"><img src="https://github.com/ChrGri/DIY-Sim-Racing-FFB-Pedal/actions/workflows/arduino.yml/badge.svg?branch=main" alt="Arduino Build"></a>
   <a href="https://github.com/ChrGri/DIY-Sim-Racing-FFB-Pedal/actions/workflows/main.yml"><img src="https://github.com/ChrGri/DIY-Sim-Racing-FFB-Pedal/actions/workflows/main.yml/badge.svg" alt="Doxygen Action"></a>
